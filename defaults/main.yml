@@ -2,8 +2,11 @@
 # defaults file for ansible-role-tripleo-overcloud-validate
 working_dir: /home/stack
 validate_script: overcloud-validate.sh.j2
+validate_template: tenantvm_floatingip.yaml
 validate_log: "{{ working_dir }}/overcloud_validate.log"
-
+validate_stack_name: pingtest_stack
+validate_success_status: CREATE_COMPLETE
+validate_server_name: Server1
 step_validate_overcloud: true
 test_ping: true
 
