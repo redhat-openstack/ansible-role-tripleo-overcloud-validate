@@ -134,6 +134,30 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_b4d77c22",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 15
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1005220
+      },
+      "writtenOn": "2016-04-26T12:12:17Z",
+      "side": 1,
+      "message": "Ack will update the review, Thank you.",
+      "parentUuid": "baa041b7_16c86f21",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 7
+      },
+      "revId": "ea5394fbbcc71b753389430f9ecbdeb0ee47d4bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_f6caab19",
         "filename": "templates/tenantvm_floatingip.yaml.j2",
         "patchSetId": 15
@@ -145,6 +169,30 @@
       "writtenOn": "2016-04-26T10:22:13Z",
       "side": 1,
       "message": "What are the reasons to not use tripleo-ci repo directly and fork this template here?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 33
+      },
+      "revId": "ea5394fbbcc71b753389430f9ecbdeb0ee47d4bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_f41624f0",
+        "filename": "templates/tenantvm_floatingip.yaml.j2",
+        "patchSetId": 15
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1005220
+      },
+      "writtenOn": "2016-04-26T12:12:17Z",
+      "side": 1,
+      "message": "This template is a bit modified.\nWe can\u0027t use directly the one from tripleo-ci repo due to old version of heat-api.\nAnd btw I think it could be useful to have a dedicated role validate and our own template instead of having a role which simply clone tripleo-ci.\nAnd this kind of role could be more robust so we can for example execute it against the undercloud.",
+      "parentUuid": "baa041b7_f6caab19",
       "range": {
         "startLine": 1,
         "startChar": 0,
