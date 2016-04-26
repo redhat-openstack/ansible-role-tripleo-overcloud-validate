@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_b65d437b",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001800
+      },
+      "writtenOn": "2016-04-26T10:22:13Z",
+      "side": 1,
+      "message": "maybe an empty line here maybe for nicer formatting",
+      "revId": "ea5394fbbcc71b753389430f9ecbdeb0ee47d4bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_f663cb3f",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 15
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001800
+      },
+      "writtenOn": "2016-04-26T10:22:13Z",
+      "side": 1,
+      "message": "indentation (2 spaces missing)",
+      "range": {
+        "startLine": 9,
+        "startChar": 2,
+        "endLine": 9,
+        "endChar": 4
+      },
+      "revId": "ea5394fbbcc71b753389430f9ecbdeb0ee47d4bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_b6d423bd",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001800
+      },
+      "writtenOn": "2016-04-26T10:22:13Z",
+      "side": 1,
+      "message": "I think the |bool is not necessary.",
+      "range": {
+        "startLine": 11,
+        "startChar": 15,
+        "endLine": 11,
+        "endChar": 20
+      },
+      "revId": "ea5394fbbcc71b753389430f9ecbdeb0ee47d4bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_7650db5e",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 15
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001800
+      },
+      "writtenOn": "2016-04-26T10:22:13Z",
+      "side": 1,
+      "message": "indentation",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 2
+      },
+      "revId": "ea5394fbbcc71b753389430f9ecbdeb0ee47d4bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_564f17bd",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 15
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1001800
+      },
+      "writtenOn": "2016-04-26T10:22:13Z",
+      "side": 1,
+      "message": "missing brackets [[ ]] and subshell stuff $( )",
+      "range": {
+        "startLine": 54,
+        "startChar": 7,
+        "endLine": 54,
+        "endChar": 103
+      },
+      "revId": "ea5394fbbcc71b753389430f9ecbdeb0ee47d4bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_16c86f21",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 15
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1001800
+      },
+      "writtenOn": "2016-04-26T10:22:13Z",
+      "side": 1,
+      "message": "Use \"set -e\" in the beginning and then it will exit when something fails. make a cleanup function and use \"trap\" to call it upon exit. Then you spare all the checks for the previous exist values.\n\nSomething like this: https://github.com/openstack-infra/tripleo-ci/blob/master/toci_instack.sh#L86",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 7
+      },
+      "revId": "ea5394fbbcc71b753389430f9ecbdeb0ee47d4bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_f6caab19",
+        "filename": "templates/tenantvm_floatingip.yaml.j2",
+        "patchSetId": 15
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001800
+      },
+      "writtenOn": "2016-04-26T10:22:13Z",
+      "side": 1,
+      "message": "What are the reasons to not use tripleo-ci repo directly and fork this template here?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 33
+      },
+      "revId": "ea5394fbbcc71b753389430f9ecbdeb0ee47d4bc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
