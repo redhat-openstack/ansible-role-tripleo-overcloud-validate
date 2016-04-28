@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_347ec119",
+        "filename": "templates/tenantvm_floatingip.yaml.j2",
+        "patchSetId": 17
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1005220
+      },
+      "writtenOn": "2016-04-28T13:40:35Z",
+      "side": 1,
+      "message": "I add those 3 jinja variables to be able to choose which we want to use for the test",
+      "revId": "3e99f2441bc66d8d195310fb46eb83ed02fd48db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_34a5a1a1",
         "filename": "templates/tenantvm_floatingip.yaml.j2",
         "patchSetId": 17
@@ -47,6 +64,57 @@
       "writtenOn": "2016-04-28T13:37:29Z",
       "side": 1,
       "message": "I don\u0027t think this will work on master. Nova no longer creates default flavors:\n\nhttps://review.openstack.org/#/c/300127/",
+      "revId": "3e99f2441bc66d8d195310fb46eb83ed02fd48db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_14797d2f",
+        "filename": "templates/tenantvm_floatingip.yaml.j2",
+        "patchSetId": 17
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1005220
+      },
+      "writtenOn": "2016-04-28T13:40:35Z",
+      "side": 1,
+      "message": "I have add the \u0027test_flavor\u0027 parameter, and remove the test_flavor resource creation in order to be compatible with old heat versions, which doesn\u0027t have flavor resource.",
+      "revId": "3e99f2441bc66d8d195310fb46eb83ed02fd48db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_94934d4f",
+        "filename": "templates/tenantvm_floatingip.yaml.j2",
+        "patchSetId": 17
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1005220
+      },
+      "writtenOn": "2016-04-28T13:40:35Z",
+      "side": 1,
+      "message": "I have add the keypair creation instead of importing a key with nova cli command.\nI think the more we can use heat resource, the less we have to clean up the env after the test.\n\nUnfortunately the creation of the external network wasn\u0027t possible due to old versions support (Heat, liberty and older)",
+      "revId": "3e99f2441bc66d8d195310fb46eb83ed02fd48db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_74b1e9e0",
+        "filename": "templates/tenantvm_floatingip.yaml.j2",
+        "patchSetId": 17
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1005220
+      },
+      "writtenOn": "2016-04-28T13:40:35Z",
+      "side": 1,
+      "message": "use param instead of flavor resource and key resource instead of name",
       "revId": "3e99f2441bc66d8d195310fb46eb83ed02fd48db",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
