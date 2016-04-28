@@ -16,6 +16,23 @@
       "revId": "3e99f2441bc66d8d195310fb46eb83ed02fd48db",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_d49b1571",
+        "filename": "templates/tenantvm_floatingip.yaml.j2",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003529
+      },
+      "writtenOn": "2016-04-28T13:26:56Z",
+      "side": 1,
+      "message": "Could you point out what you added here and why?",
+      "revId": "3e99f2441bc66d8d195310fb46eb83ed02fd48db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
