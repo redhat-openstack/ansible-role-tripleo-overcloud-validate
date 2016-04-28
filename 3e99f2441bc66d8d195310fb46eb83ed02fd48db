@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_94a58db6",
+        "filename": "defaults/main.yml",
+        "patchSetId": 17
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1006607
+      },
+      "writtenOn": "2016-04-28T13:26:22Z",
+      "side": 1,
+      "message": "we should probably namespace all of these with artov_",
+      "revId": "3e99f2441bc66d8d195310fb46eb83ed02fd48db",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
