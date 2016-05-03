@@ -18,10 +18,10 @@ neutron net-delete {{ overcloud_public_network_name }} > /dev/null 2>&1 || true
 #( note: heat can't create an external network in liberty)
 neutron net-create {{ overcloud_public_network_name }} --router:external=True \
     --provider:network_type {{ public_network_type }} \
-    --provider:physical_network {{ public_physical_network }} \
-{% if public_segmentation_id != '' %}
-    --provider:segmentation_id 10
+    {% if public_segmentation_id != '' %}
+    --provider:segmentation_id {{ public_segmentation_id }} \
 {% endif %}
+    --provider:physical_network {{ public_physical_network }}
 
 neutron subnet-create --name ext-subnet \
     --allocation-pool \
