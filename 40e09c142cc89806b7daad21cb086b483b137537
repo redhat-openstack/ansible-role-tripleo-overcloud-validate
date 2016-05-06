@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_ca47d7ba",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1006607
+      },
+      "writtenOn": "2016-05-06T13:03:31Z",
+      "side": 1,
+      "message": "weird that this was hardcoded before...",
+      "revId": "40e09c142cc89806b7daad21cb086b483b137537",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
