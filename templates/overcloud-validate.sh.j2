@@ -58,13 +58,20 @@ heat stack-create {{ validate_stack_name }} --template-file  tenantvm_floatingip
 # wait for stack complete or failed
 /bin/bash /usr/libexec/openstack-tripleo/wait_for -w 600 --delay 30 \
   --success-match {{ validate_success_status }} -- heat stack-show {{ validate_stack_name }}
+
 # let time to the instance to boot
-sleep 30
+tripleo wait_for -w 1200 -d 10 -s "CREATE_COMPLETE" -- "heat stack-list | grep {{ validate_stack_name }}";
+
 # get the floating ip
 novaid=`nova list|grep {{ validate_server_name }} |awk  '{print $2}'`
 floating_ip=`nova floating-ip-list | grep $novaid | awk  '{print $4}'`
 ping -c 1 $floating_ip
+
 nova show {{ validate_server_name }} || :
 nova service-list || :
 neutron agent-list || :
 nova console-log {{ validate_server_name }}
+
+
+
+
