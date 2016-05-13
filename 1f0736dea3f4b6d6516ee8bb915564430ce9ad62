@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_0e8ffa75",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1005220
+      },
+      "writtenOn": "2016-05-13T12:22:14Z",
+      "side": 1,
+      "message": "I think, we need to add liberty in the list",
+      "revId": "1f0736dea3f4b6d6516ee8bb915564430ce9ad62",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_4e9982c3",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1005220
+      },
+      "writtenOn": "2016-05-13T12:22:14Z",
+      "side": 1,
+      "message": "need to add more timing here, arround 90 sec at least... Fedora takes much longer to boot and get an ip than cirros",
+      "revId": "1f0736dea3f4b6d6516ee8bb915564430ce9ad62",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
