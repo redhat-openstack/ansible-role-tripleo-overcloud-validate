@@ -1,82 +1,31 @@
 #!/bin/bash
+
 # Validate the overcloud deployment
+
 set -eux
 
-function cleanup() {
-# clean env
-{% if release in ['kilo', 'liberty', 'rhos-7'] %}
-    heat stack-delete {{ validate_stack_name }}
-{% else  %}
-     heat stack-delete -y {{ validate_stack_name }}
-{% endif %}
-    if [[ $(tripleo wait_for -w 300 -d 30 -s "Stack not found" -- "heat stack-show {{ validate_stack_name }}") ]]; then
-        echo "Heat stack delete"
-    else
-        if [[ $(heat stack-list | grep {{ validate_stack_name }} | grep -i failed) ]]; then
-        {% if release in ['kilo', 'liberty', 'rhos-7'] %}
-            heat stack-delete {{ validate_stack_name }}
-        {% else  %}
-             heat stack-delete -y {{ validate_stack_name }}
-        {% endif %}
-        fi
-    fi
-}
-# trap on exit
-trap cleanup EXIT
-# source tenantrc file
-source {{ working_dir }}/{{ tenantrc }}
-# get validate image
-if [[ ! -d {{ validate_image_dir }} ]]; then
-    mkdir {{ validate_image_dir }};
+# Translate some ansible variables into shell variables.
+# (trown) the new lines in between these are needed so that
+# after templating they variable assignments are on separate lines.
+TEST_PING={% if test_ping|bool %}1{% else %}0{% endif %}
+
+PREPARE_TEMPEST={% if prepare_tempest|bool %}1{% else %}0{% endif %}
+
+TEST_TEMPEST={% if test_tempest|bool %}1{% else %}0{% endif %}
+
+
+# Run the appropriate chunk of code if the corresponding variable was set.
+if [ ${TEST_PING} == "1" ]; then
+{% include 'tripleo-pingtest.sh.j2' %}
+
 fi
-IMAGE_PATH={{ validate_image_dir }}/cirros.img
-INITRAMFS_PATH={{ validate_image_dir }}/cirros.initramfs
-KERNEL_PATH={{ validate_image_dir }}/cirros.kernel
-curl -L -o $IMAGE_PATH {{ validate_image_url }}{{ image_disk }}
-curl -L -o $INITRAMFS_PATH {{ validate_image_url }}{{ image_initramfs }}
-curl -L -o $KERNEL_PATH {{ validate_image_url }}{{ image_kernel }}
-# remove existing image
-for image in $(glance image-list | grep {{ validate_image_name }} | awk '{ print $2; }'); do
-   glance image-delete $image
-done
-# upload cirros image into glance
-ramdisk_id=$(openstack image create pingtest_initramfs --public --container-format ari --disk-format ari --file $INITRAMFS_PATH | grep ' id ' | awk '{print $4}')
-kernel_id=$(openstack image create pingtest_kernel --public --container-format aki --disk-format aki --file $KERNEL_PATH | grep ' id ' | awk '{print $4}')
-openstack image create {{ validate_image_name }} --public --container-format ami --disk-format ami \
-    --property kernel_id=$kernel_id --property ramdisk_id=$ramdisk_id --file $IMAGE_PATH
-# clean up network if it exists from previous run
-neutron net-delete {{ overcloud_public_network_name }} > /dev/null 2>&1 || true
-# create external network
-# Liberty compat :
-#( note: heat can't create an external network in liberty)
-neutron net-create {{ overcloud_public_network_name }} --router:external=True \
-    --provider:network_type {{ public_network_type }} \
-    --provider:physical_network {{ public_physical_network }} \
-{% if public_segmentation_id != '' %}
-    --provider:segmentation_id {{ public_segmentation_id }}
-{% endif %}
 
+if [[ ${PREPARE_TEMPEST} == "1" || ${TEST_TEMPEST} == "1" ]]; then
+{% include 'configure-tempest.sh.j2' %}
 
-neutron subnet-create --name ext-subnet \
-    --allocation-pool \
-    start={{ public_net_pool_start }},end={{ public_net_pool_end }} \
-    --disable-dhcp \
-    --gateway {{ public_net_gateway }} \
-    {{ overcloud_public_network_name }} {{ floating_ip_cidr }}
+fi
 
-# create test ping stack
-heat stack-create {{ validate_stack_name }} --template-file  tenantvm_floatingip.yaml
-# wait for stack complete or failed
-/bin/bash /usr/libexec/openstack-tripleo/wait_for -w 600 --delay 30 \
-  --success-match {{ validate_success_status }} -- heat stack-show {{ validate_stack_name }}
-# let time to the instance to boot
-sleep 30
-# get the floating ip
-novaid=`nova list|grep {{ validate_server_name }} |awk  '{print $2}'`
-floating_ip=`nova floating-ip-list | grep $novaid | awk  '{print $4}'`
-nova console-log {{ validate_server_name }}
-ping -c 1 $floating_ip
-nova show {{ validate_server_name }} || :
-nova service-list || :
-neutron agent-list ||:
-nova console-log {{ validate_server_name }}
+if [ ${TEST_TEMPEST} == "1" ]; then
+{% include 'run-tempest.sh.j2' %}
+
+fi

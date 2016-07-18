@@ -5,13 +5,21 @@
   template:
     src: "{{ validate_script }}"
     dest: "{{ working_dir }}/overcloud-validate.sh"
-    mode: 0744
+    mode: 0755
 
-- name: Copy validate template
+- name: Create tempest skipfile
   template:
-    src: "{{ validate_template }}"
-    dest: "{{ working_dir }}/tenantvm_floatingip.yaml"
+    src: skipfile.j2
+    dest: "{{ working_dir }}/skipfile"
+    mode: 0644
+
+- name: Create tempest run script
+  template:
+    src: run-tempest.sh.j2
+    dest: "{{ working_dir }}/run-tempest.sh"
+    mode: 0755
 
 - name: Validate the overcloud
   shell: |
     {{ working_dir }}/overcloud-validate.sh > {{ validate_log }} 2>&1
+
