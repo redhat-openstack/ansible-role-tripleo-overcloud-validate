@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_243d05c4",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1007211
+      },
+      "writtenOn": "2016-08-03T17:00:03Z",
+      "side": 1,
+      "message": "hrm...we should update this, could be a few additional values.  perhaps diff commit or not...",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 49
+      },
+      "revId": "e96f60fdb9ebbe7704362186d1f8aac0ecc1667f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_0438c1d1",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1007211
+      },
+      "writtenOn": "2016-08-03T17:00:03Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 16,
+        "startChar": 26,
+        "endLine": 16,
+        "endChar": 53
+      },
+      "revId": "e96f60fdb9ebbe7704362186d1f8aac0ecc1667f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
