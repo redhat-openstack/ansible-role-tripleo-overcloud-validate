@@ -64,11 +64,26 @@ neutron subnet-create --name ext-subnet \
     --gateway {{ public_net_gateway }} \
     {{ overcloud_public_network_name }} {{ floating_ip_cidr }}
 
+# poll for subnet to be created
+NEXT_WAIT_TIME=0
+until [[ $(neutron subnet-list | grep 'ext-subnet') ]] || [ $NEXT_WAIT_TIME -eq 4 ]; do
+sleep $(( NEXT_WAIT_TIME++ ))
+done
+
 # create test ping stack
-heat stack-create {{ validate_stack_name }} --template-file  tenantvm_floatingip.yaml
-# wait for stack complete or failed
-/bin/bash /usr/libexec/openstack-tripleo/wait_for -w 600 --delay 30 \
+RETRY=0
+while [ $RETRY -lt 3 ] && [[ -z $(heat stack-list | grep "{{ validate_stack_name }}" | grep "COMPLETE") ]] && [[ -z $(heat stack-list | grep "{{ validate_stack_name }}" | grep "PROGRESS") ]]; do
+  if [[ $(heat stack-list | grep "{{ validate_stack_name }}") | grep "FAILED" ]]; then
+    heat stack-delete -y "{{ validate_stack_name }}"
+    sleep 60
+  fi
+  heat stack-create {{ validate_stack_name }} --template-file  tenantvm_floatingip.yaml
+  # wait for stack complete or failed
+  /bin/bash /usr/libexec/openstack-tripleo/wait_for -w 600 --delay 30 \
   --success-match {{ validate_success_status }} -- heat stack-show {{ validate_stack_name }}
+  RETRY=$(( RETRY+1 ))
+done
+
 # let time to the instance to boot
 sleep 30
 # get the floating ip
