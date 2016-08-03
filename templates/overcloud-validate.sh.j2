@@ -64,6 +64,12 @@ neutron subnet-create --name ext-subnet \
     --gateway {{ public_net_gateway }} \
     {{ overcloud_public_network_name }} {{ floating_ip_cidr }}
 
+# poll for subnet to be created
+NEXT_WAIT_TIME=0
+until [ -z "$(neutron subnet-list | grep 'ext-subnet')" ] || [ $NEXT_WAIT_TIME -eq 4 ]; do
+sleep $(( NEXT_WAIT_TIME++ ))
+done
+
 # create test ping stack
 heat stack-create {{ validate_stack_name }} --template-file  tenantvm_floatingip.yaml
 # wait for stack complete or failed
