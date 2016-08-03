@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_84529111",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1007211
+      },
+      "writtenOn": "2016-08-03T17:01:01Z",
+      "side": 1,
+      "message": "rhos-8, rhos-9, rhos-10, master, mitaka",
+      "parentUuid": "baa041b7_243d05c4",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 49
+      },
+      "revId": "e96f60fdb9ebbe7704362186d1f8aac0ecc1667f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_0438c1d1",
         "filename": "templates/overcloud-validate.sh.j2",
         "patchSetId": 1
