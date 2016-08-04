@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_90df670c",
+        "filename": "tasks/validate.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000779
+      },
+      "writtenOn": "2016-08-04T17:49:31Z",
+      "side": 1,
+      "message": "Missing the step to copy validate template?:\n\nhttps://github.com/redhat-openstack/ansible-role-tripleo-overcloud-validate/blob/master/tasks/main.yml#L13",
+      "revId": "05bc1064e1a1b58f6fb71cf394c3aed0972c27c9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_70e2a3d6",
+        "filename": "tasks/validate.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000779
+      },
+      "writtenOn": "2016-08-04T17:49:31Z",
+      "side": 1,
+      "message": "Where is this template?",
+      "revId": "05bc1064e1a1b58f6fb71cf394c3aed0972c27c9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_50e55fd9",
+        "filename": "tasks/validate.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000779
+      },
+      "writtenOn": "2016-08-04T17:49:31Z",
+      "side": 1,
+      "message": "Same as above, I don\u0027t see this template. Where is it stored?",
+      "revId": "05bc1064e1a1b58f6fb71cf394c3aed0972c27c9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_30e89bb2",
+        "filename": "tasks/validate.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000779
+      },
+      "writtenOn": "2016-08-04T17:49:31Z",
+      "side": 1,
+      "message": "I would keep the validate copy and run together and then do tempest. Any reason to split the tasks?",
+      "revId": "05bc1064e1a1b58f6fb71cf394c3aed0972c27c9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
