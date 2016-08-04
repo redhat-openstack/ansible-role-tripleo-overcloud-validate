@@ -1,0 +1,25 @@
+---
+# tasks file for ansible-role-tripleo-overcloud-validate
+
+- name: Create overcloud validate script
+  template:
+    src: "{{ validate_script }}"
+    dest: "{{ working_dir }}/overcloud-validate.sh"
+    mode: 0755
+
+- name: Create tempest skipfile
+  template:
+    src: skipfile.j2
+    dest: "{{ working_dir }}/skipfile"
+    mode: 0644
+
+- name: Create tempest run script
+  template:
+    src: run-tempest.sh.j2
+    dest: "{{ working_dir }}/run-tempest.sh"
+    mode: 0755
+
+- name: Validate the overcloud
+  shell: |
+    {{ working_dir }}/overcloud-validate.sh > {{ validate_log }} 2>&1
+
