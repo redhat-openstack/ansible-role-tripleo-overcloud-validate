@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_96562e5a",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1007211
+      },
+      "writtenOn": "2016-08-11T17:23:54Z",
+      "side": 1,
+      "message": "(optional)\n\nhrm...looking at this with fresh eyes, in the event that we attempt a few retries and still no subnet created, might want to echo out something explicit to that effect?",
+      "range": {
+        "startLine": 70,
+        "startChar": 60,
+        "endLine": 70,
+        "endChar": 81
+      },
+      "revId": "dc3f9e77e68229edb4711f7a4c6d039a8093b58d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
