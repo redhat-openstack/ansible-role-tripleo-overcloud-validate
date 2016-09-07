@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_5fbbc475",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000779
+      },
+      "writtenOn": "2016-09-07T20:04:31Z",
+      "side": 1,
+      "message": "should be commented",
+      "revId": "f8c3d9857d2f38fa30e6284d816c0085614ac69c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_3fbec064",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000779
+      },
+      "writtenOn": "2016-09-07T20:04:31Z",
+      "side": 1,
+      "message": "should be commented",
+      "revId": "f8c3d9857d2f38fa30e6284d816c0085614ac69c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_1fb53c7d",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000779
+      },
+      "writtenOn": "2016-09-07T20:04:31Z",
+      "side": 1,
+      "message": "should be commented",
+      "revId": "f8c3d9857d2f38fa30e6284d816c0085614ac69c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_ffb73883",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000779
+      },
+      "writtenOn": "2016-09-07T20:04:31Z",
+      "side": 1,
+      "message": "should be commented",
+      "revId": "f8c3d9857d2f38fa30e6284d816c0085614ac69c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_dfafd429",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000779
+      },
+      "writtenOn": "2016-09-07T20:04:31Z",
+      "side": 1,
+      "message": "should be commented",
+      "revId": "f8c3d9857d2f38fa30e6284d816c0085614ac69c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_bfaad018",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000779
+      },
+      "writtenOn": "2016-09-07T20:04:31Z",
+      "side": 1,
+      "message": "should be commented",
+      "revId": "f8c3d9857d2f38fa30e6284d816c0085614ac69c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_9fa94c27",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000779
+      },
+      "writtenOn": "2016-09-07T20:04:31Z",
+      "side": 1,
+      "message": "should be commented",
+      "revId": "f8c3d9857d2f38fa30e6284d816c0085614ac69c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
