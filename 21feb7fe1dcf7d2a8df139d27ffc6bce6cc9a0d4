@@ -1,0 +1,8 @@
+Verified+1: <openstack-ci-service+rdo-ci-centos@redhat.com>
+Code-Review+1: Harry Rybacki <hrybacki@gmail.com>
+Code-Review+2: mathieu bultel <mat.bultel@gmail.com>
+Submitted-by: mathieu bultel <mat.bultel@gmail.com>
+Submitted-at: Thu, 08 Sep 2016 09:07:32 -0400
+Reviewed-on: https://review.gerrithub.io/290359
+Project: redhat-openstack/ansible-role-tripleo-overcloud-validate
+Branch: refs/heads/master
