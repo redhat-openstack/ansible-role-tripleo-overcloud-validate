@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_64303708",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1001800
+      },
+      "writtenOn": "2016-09-09T14:31:33Z",
+      "side": 1,
+      "message": "It would be better to use a while loop and use if and break inside with a timeout error message.",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 5
+      },
+      "revId": "985190e2b9aed1681b51ae91a1533fd9f10acca7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_243a2fe8",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1001800
+      },
+      "writtenOn": "2016-09-09T14:31:33Z",
+      "side": 1,
+      "message": "The variable gets incremented only after the command. Is it intentional that first time we sleep zero seconds?\n\n++NEXT_WAIT_TIME would wait 1, 2, 3, 4 seconds for a total of 10 seconds, this one only waits 0 + 1 + 2 + 3 \u003d 6.",
+      "range": {
+        "startLine": 70,
+        "startChar": 10,
+        "endLine": 70,
+        "endChar": 26
+      },
+      "revId": "985190e2b9aed1681b51ae91a1533fd9f10acca7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
