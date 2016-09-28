@@ -69,20 +69,21 @@ openstack image create {{ validate_image_name }} --public --container-format ami
 ##   heat can't create an external network in liberty)
 ## ::
 
-neutron net-create {{ overcloud_public_network_name }} --router:external=True \
+{% if release in ['kilo', 'liberty', 'rhos-7', 'rhos-8'] %}
+  neutron net-create {{ overcloud_public_network_name }} --router:external=True \
     --provider:network_type {{ public_network_type }} \
     --provider:physical_network {{ public_physical_network }} \
-{% if public_segmentation_id != '' %}
+  {% if public_segmentation_id != '' %}
     --provider:segmentation_id {{ public_segmentation_id }}
-{% endif %}
+  {% endif %}
 
-
-neutron subnet-create --name ext-subnet \
+  neutron subnet-create --name ext-subnet \
     --allocation-pool \
     start={{ public_net_pool_start }},end={{ public_net_pool_end }} \
     --disable-dhcp \
     --gateway {{ public_net_gateway }} \
     {{ overcloud_public_network_name }} {{ floating_ip_cidr }}
+{% endif %}
 
 ## * Create test ping stack
 ## ::
