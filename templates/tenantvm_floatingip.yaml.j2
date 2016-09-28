@@ -19,6 +19,40 @@ parameters:
     default: '{{ overcloud_public_network_name }}'
     description: >
       ID or name of public network for which floating IP addresses will be allocated
+{% if release not in ['kilo','liberty','rhos-7','rhos-8'] %}
+  public_network_type:
+    type: string
+    description: Public network type
+    default: '{{ public_network_type }}'
+  public_physical_network:
+    type: string
+    description: Public  physical network
+    default: '{{ public_physical_network }}'
+  public_router_external:
+    type: string
+    description: Public external router
+    default: '{{ public_router_external }}'
+  public_segmentation_id:
+    type: string
+    description: Public segmentation id
+    default: '{{ public_segmentation_id }}'
+  public_net_cidr:
+    type: string
+    description: Public network address (CIDR notation)
+    default: '{{ floating_ip_cidr }}'
+  public_net_gateway:
+    type: string
+    description: Public network gateway address
+    default: '{{ public_net_gateway }}'
+  public_net_pool_start:
+    type: string
+    description: Start of public network IP address allocation pool
+    default: '{{ public_net_pool_start }}'
+  public_net_pool_end:
+    type: string
+    default: '{{ public_net_pool_end }}'
+    description: End of public network IP address allocation pool
+{% endif %}
   private_net_name:
     type: string
     description: Name of private network to be created
@@ -52,6 +86,30 @@ resources:
     properties:
       save_private_key: true
       name: {get_param: key_name }
+
+{% if release not in ['kilo','liberty','rhos-7','rhos-8'] %}
+  public_net:
+    type: OS::Neutron::Net
+    properties:
+      name: { get_param: public_net_name }
+      network_type: {{ get_param: public_network_type }}
+      physical_network: {{ get_param: public_physical_network }}
+      router_external: { get_param: public_router_external }
+{% if public_network_type != 'flat' %}
+      segmentation_id: { get_param: public_segmentation_id }
+{% endif %}
+
+  public_subnet:
+    type: OS::Neutron::Subnet
+    properties:
+      network_id: { get_resource: public_net }
+      cidr: { get_param: public_net_cidr }
+      gateway_ip: { get_param: public_net_gateway }
+      allocation_pools:
+        - start: { get_param: public_net_pool_start }
+          end: { get_param: public_net_pool_end }
+      enable_dhcp: false
+{% endif %}
 
   private_net:
     type: OS::Neutron::Net
