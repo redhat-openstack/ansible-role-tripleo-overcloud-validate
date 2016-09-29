@@ -1,0 +1,7 @@
+Verified+1: <openstack-ci-service+rdo-ci-centos@redhat.com>
+Code-Review+2: wes hayutin <weshayutin@gmail.com>
+Submitted-by: wes hayutin <weshayutin@gmail.com>
+Submitted-at: Thu, 29 Sep 2016 00:36:55 -0400
+Reviewed-on: https://review.gerrithub.io/296273
+Project: redhat-openstack/ansible-role-tripleo-overcloud-validate
+Branch: refs/heads/master
