@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_1e0ef73c",
+        "filename": "templates/overcloud-validate.sh.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000586
+      },
+      "writtenOn": "2016-10-07T18:10:45Z",
+      "side": 1,
+      "message": "please add a link to the heat template.. \nhttps://github.com/redhat-openstack/ansible-role-tripleo-overcloud-validate/blob/master/templates/tenantvm_floatingip.yaml.j2",
+      "revId": "4318046fb3d4e4a90a65b6e7b73745f848b4a774",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
