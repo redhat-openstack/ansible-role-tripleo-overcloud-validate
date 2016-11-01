@@ -1,0 +1,9 @@
+Code-Review+1: Juan Antonio Osorio <josorior@redhat.com>
+Code-Review+1: Gaël Chamoulaud <gchamoul@redhat.com>
+Code-Review+2: wes hayutin <weshayutin@gmail.com>
+Verified+1: wes hayutin <weshayutin@gmail.com>
+Submitted-by: Attila Darazs <adarazs@redhat.com>
+Submitted-at: Tue, 01 Nov 2016 10:44:02 -0400
+Reviewed-on: https://review.gerrithub.io/299499
+Project: redhat-openstack/ansible-role-tripleo-overcloud-validate
+Branch: refs/heads/master
